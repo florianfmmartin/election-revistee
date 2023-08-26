@@ -14,6 +14,10 @@
     <script src="/public/resultats.js"></script>
     <script src="https://unpkg.com/petite-vue" defer init></script>
     <style>
+        h1, h2, h3, h4 {
+            margin: 0;
+            padding: 0;
+        }
         .card {
             background-color: var(--background-alt);
             padding: 2rem;
@@ -27,13 +31,13 @@
         .results {
             display: flex;
             flex-flow: row nowrap;
-            max-height: 16rem;
+            max-height: 20rem;
         }
 
         .result {
             display: flex;
             flex-flow: column-reverse nowrap;
-            height: 16rem;
+            height: 20rem;
             width: 100%;
             margin: 0.5rem;
         }
@@ -84,6 +88,8 @@
         }
     ">
         <div class="card">
+            <h2>Résultats</h2>
+            <br />
             <div class="graph" v-scope="
                 {
                     bests: null,
@@ -123,6 +129,8 @@
         <br />
 
         <div class="card">
+            <h2>Contrôles</h2>
+            <br />
             <div class="controls">
                 <label for="coalition">Activer/Désactiver la Coalition PQ/QS</label>
                 <input type="checkbox" name="coalition" id="coalition" v-model="coalition">
@@ -146,6 +154,32 @@
                 <span class="bold" v-text="QSversPQ"></span>
                 <input type="range" name="QSversPQ" id="QSversPQ" v-model="QSversPQ">
             </div>
+        </div>
+
+        <br />
+
+        <div class="card">
+            <h2>Quelques détails sur le projet et moi-même</h2>
+            <p>
+                Mon calcul est basé sur les données ouvertes d'Élections Québec:
+                <br />
+                <a href="https://www.dgeq.org/doc/gen2022-10-03/resultats.json">
+                    https://www.dgeq.org/doc/gen2022-10-03/resultats.json
+                </a>
+            </p>
+            <p>
+                Mon code est source-ouverte sur github:
+                <br />
+                <a href="https://github.com/florianfmmartin/elections-2022-revisitees">
+                    https://github.com/florianfmmartin/elections-2022-revisitees
+                </a>
+            </p>
+            <p>
+                Si vous avez-des questions, des commentaires, ou des idées de projets à me partager n'hésitez pas à
+                m'écrire sur Mastodon:
+                <br />
+                <a href="https://jasette.facil.services/@flo">flo@jasette.facil.services</a>
+            </p>
         </div>
     </div>
 </body>
